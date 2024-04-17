@@ -1,8 +1,11 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+@DisplayName("Проверка класса Account")
 @RunWith(Parameterized.class)
 public class AccountTest {
     private final String name;
@@ -28,6 +31,8 @@ public class AccountTest {
         };
     }
     @Test
+    @DisplayName("Проверка метода checkNameToEmboss")
+    @Description("Параметризованный тест с разными именами")
     public void checkNameToEmbossTest() {
         Account account = new Account(name);
         Assert.assertEquals(result, account.checkNameToEmboss());
